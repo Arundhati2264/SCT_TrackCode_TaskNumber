@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Navigation Menu</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: transparent; /* Change background color here */
+    transition: background-color 0.3s;
+    z-index: 1000;
+  }
+  .navbar:hover {
+    background-color: #333; /* Change background color when hovering over the navbar */
+  }
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+    transition: background-color 0.3s;
+  }
+  .navbar li {
+    float: left;
+  }
+  .navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .navbar li a:hover {
+    color: #ff7f00; /* Change text color when hovering over a menu item */
+  }
+  /* Add more styling for different states or effects */
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div>
+
+<div style="height:1000px; background-color:#f2f2f2; padding:20px;">
+  <h2>Scroll down to see the effect when scrolling</h2>
+</div>
+
+<script>
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      document.querySelector(".navbar").style.backgroundColor = "#333"; /* Change background color when scrolling */
+    } else {
+      document.querySelector(".navbar").style.backgroundColor = "transparent";
+    }
+  }
+</script>
+
+</body>
+</html>
